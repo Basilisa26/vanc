@@ -98,6 +98,67 @@
 
     @keyframes dusk {
       from { background: #f5f5f5; }
+      to   { background: #2a2a2a; }
+    }
+
+    /* ───────── RESPONSIVE ───────── */
+    @media (max-width: 768px) {
+      .topbar {
+        padding: 0 1rem;
+      }
+
+      .menu {
+        gap: 1rem;
+      }
+
+      .menu a {
+        font-size: 0.8rem;
+      }
+
+      .artwork {
+        max-width: 90%;
+        max-height: 65vh;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .menu {
+        display: none; /* limpio, como galería */
+      }
+
+      .brand img {
+        height: 24px;
+      }
+
+      .artwork {
+        max-width: 92%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="topbar">
+    <div class="brand">
+      <img src="vanc-logo.png" alt="Van©">
+    </div>
+
+    <nav class="menu">
+      <a href="#inicio">Inicio</a>
+      <a href="#obra">Obra</a>
+      <a href="#prints">Prints</a>
+      <a href="#tienda">Tienda</a>
+      <a href="#news">News</a>
+      <a href="#bio">Bio</a>
+    </nav>
+  </header>
+
+  <section class="scene">
+    <div class="light"></div>
+    <img src="obra.jpg" alt="Van© obra" class="artwork">
+  </section>
 
 </body>
 </html>
+
