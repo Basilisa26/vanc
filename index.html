@@ -121,19 +121,28 @@
       }
     }
 
-    @media (max-width: 480px) {
-      .menu {
-        display: none; /* limpio, como galería */
-      }
+   @media (max-width: 480px) {
+  .topbar {
+    height: auto;
+    padding: 1rem;
+    flex-direction: column;
+    align-items: flex-start;
+  }
 
-      .brand img {
-        height: 24px;
-      }
+  .menu {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 0.8rem;
+    gap: 0.6rem;
+  }
 
-      .artwork {
-        max-width: 92%;
-      }
-    }
+  .menu a {
+    margin: 0;
+    font-size: 0.9rem;
+  }
+}
+
   </style>
 </head>
 
