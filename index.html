@@ -40,7 +40,7 @@
     }
 
     .brand img {
-      height: 28px;
+      height: 36px;
     }
 
     .menu {
@@ -145,26 +145,34 @@
       }
     }
 
-    @media (max-width: 480px) {
-      .topbar {
-        height: auto;
-        padding: 0.8rem 1rem;
-        flex-direction: column;
-        align-items: center;
-      }
+   @media (max-width: 480px) {
+  .topbar {
+    height: auto;
+    padding: 1.2rem 1rem 1rem;
+    flex-direction: column;
+    align-items: center;
+  }
 
-      .menu {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 1rem;
-        margin-top: 0.6rem;
-      }
+  .brand {
+    margin-bottom: 0.8rem;
+  }
 
-      .menu a {
-        font-size: 0.8rem;
-        white-space: nowrap;
-      }
-    }
+  .brand img {
+    height: 56px; /* LOGO PROTAGONISTA */
+  }
+
+  .menu {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .menu a {
+    font-size: 0.8rem;
+    white-space: nowrap;
+  }
+}
+
   </style>
 </head>
 
