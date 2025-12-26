@@ -6,46 +6,52 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
-    /* ───────── RESET ───────── */
+    /* =====================================================
+       RESET BÁSICO
+       ===================================================== */
     * {
-      box-sizing: border-box;
+      box-sizing: border-box; /* evita problemas de tamaños */
     }
 
     html {
-      scroll-behavior: smooth;
+      scroll-behavior: smooth; /* scroll suave entre secciones */
     }
 
     body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
-      background: #f5f5f5;
+      background: #f5f5f5; /* color base del sitio */
       color: #111;
-      overflow-x: hidden;
+      overflow-x: hidden; /* evita scroll horizontal */
     }
 
-    /* ───────── HEADER ───────── */
+    /* =====================================================
+       HEADER / BARRA SUPERIOR
+       ===================================================== */
     .topbar {
-      position: fixed;
+      position: fixed;              /* siempre visible arriba */
       top: 0;
       left: 0;
       width: 100%;
-      height: 70px;
+      height: 70px;                 /* altura base desktop */
       padding: 0 2rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      z-index: 20;
-      background: rgba(255, 255, 255, 0.75);
-      backdrop-filter: blur(8px);
+      z-index: 20;                  /* por encima del contenido */
+      background: rgba(255, 255, 255, 0.75); /* fondo translúcido */
+      backdrop-filter: blur(8px);   /* efecto cristal */
     }
 
+    /* LOGO (ajusta aquí el tamaño en desktop) */
     .brand img {
       height: 36px;
     }
 
+    /* MENÚ HORIZONTAL */
     .menu {
       display: flex;
-      gap: 1.5rem;
+      gap: 1.5rem; /* espacio entre enlaces */
     }
 
     .menu a {
@@ -59,28 +65,32 @@
       opacity: 1;
     }
 
-    /* ───────── HERO / SCENE ───────── */
+    /* =====================================================
+       HERO / ESCENA PRINCIPAL
+       ===================================================== */
     .scene {
       position: relative;
       width: 100%;
-      height: 100vh;
-      padding-top: 70px;
+      height: 100vh;          /* ocupa toda la pantalla */
+      padding-top: 70px;      /* deja espacio al header */
       display: flex;
       align-items: center;
       justify-content: center;
-      animation: dusk 40s linear infinite alternate;
+      animation: dusk 40s linear infinite alternate; /* día → noche */
       overflow: hidden;
     }
 
+    /* IMAGEN PRINCIPAL (obra del inicio) */
     .artwork {
       max-width: 80%;
       max-height: 70vh;
-      z-index: 2;
+      z-index: 2; /* por encima de la luz */
     }
 
+    /* SOMBRA / LUZ EN MOVIMIENTO (efecto ventana) */
     .light {
       position: absolute;
-      inset: -20%;
+      inset: -20%; /* más grande que la pantalla */
       background: linear-gradient(
         120deg,
         rgba(255,255,255,0.22),
@@ -91,23 +101,28 @@
       pointer-events: none;
     }
 
+    /* Movimiento lento de la luz */
     @keyframes windowMove {
       from { transform: translate(-30%, -20%); }
       to   { transform: translate(30%, 20%); }
     }
 
+    /* Transición de día a noche */
     @keyframes dusk {
       from { background: #f5f5f5; }
       to   { background: #2a2a2a; }
     }
 
-    /* ───────── SECTIONS (SCROLL) ───────── */
+    /* =====================================================
+       SECCIONES POR SCROLL (OBRA, PRINTS, BIO)
+       ===================================================== */
     .section {
-      min-height: 100vh;
-      padding: 140px 10vw 100px;
+      min-height: 100vh;               /* cada sección es una “sala” */
+      padding: 140px 10vw 100px;       /* aire superior por header */
       background: #f5f5f5;
     }
 
+    /* Alterna color para diferenciar secciones */
     .section:nth-of-type(even) {
       background: #ededed;
     }
@@ -125,7 +140,9 @@
       opacity: 0.85;
     }
 
-    /* ───────── RESPONSIVE ───────── */
+    /* =====================================================
+       RESPONSIVE TABLET
+       ===================================================== */
     @media (max-width: 680px) {
       .topbar {
         padding: 0 1rem;
@@ -145,40 +162,50 @@
       }
     }
 
-   @media (max-width: 480px) {
-  .topbar {
-    height: auto;
-    padding: 3rem 1rem 1rem;
-    flex-direction: column;
-    align-items: center;
-  }
+    /* =====================================================
+       RESPONSIVE MÓVIL (VERTICAL)
+       ===================================================== */
+    @media (max-width: 480px) {
 
-  .brand {
-    margin-bottom: 1rem;
-  }
+      /* Header se apila en vertical */
+      .topbar {
+        height: auto;
+        padding: 3rem 1rem 1rem;
+        flex-direction: column;
+        align-items: center;
+      }
 
-  .brand img {
-    height: 60px; /* LOGO PROTAGONISTA */
-  }
+      /* Espacio entre logo y menú */
+      .brand {
+        margin-bottom: 1rem;
+      }
 
-  .menu {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 2rem;
-  }
+      /* LOGO GRANDE EN MÓVIL (tócalo aquí) */
+      .brand img {
+        height: 60px;
+      }
 
-  .menu a {
-    font-size: 3rem;
-    white-space: nowrap;
-  }
-}
+      /* Menú horizontal centrado */
+      .menu {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2rem;
+      }
 
+      /* Tamaño del texto del menú en móvil */
+      .menu a {
+        font-size: 0.9rem; /* ⚠️ antes estaba muy grande */
+        white-space: nowrap;
+      }
+    }
   </style>
 </head>
 
 <body>
 
-  <!-- HEADER -->
+  <!-- =====================================================
+       HEADER / NAVEGACIÓN
+       ===================================================== -->
   <header class="topbar">
     <div class="brand">
       <img src="vanc-logo.png" alt="Van©">
@@ -192,13 +219,17 @@
     </nav>
   </header>
 
-  <!-- HERO -->
+  <!-- =====================================================
+       HERO / PORTADA
+       ===================================================== -->
   <section class="scene" id="inicio">
     <div class="light"></div>
     <img src="obra.jpg" alt="Van© obra" class="artwork">
   </section>
 
-  <!-- SCROLL SECTIONS -->
+  <!-- =====================================================
+       SECCIONES POR SCROLL
+       ===================================================== -->
   <section id="obra" class="section">
     <h2>Obra</h2>
     <p>
@@ -224,4 +255,3 @@
 
 </body>
 </html>
-
