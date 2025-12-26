@@ -203,6 +203,25 @@
   .bio-block {
     grid-template-columns: 1fr;
   }
+  /* PRINTS – EN CONSTRUCCIÓN */
+.prints-temp {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.prints-temp img {
+  width: 100%;
+  height: auto;
+  display: block;
+  background: #ddd;
+}
+
+@media (max-width: 768px) {
+  .prints-temp {
+    grid-template-columns: 1fr;
+  }
 }
 
     }
@@ -254,12 +273,19 @@
   </section>
 
   <!-- PRINTS -->
-  <section id="prints" class="section">
-    <h2>Prints</h2>
+<section id="prints" class="section">
+  <h2>Prints</h2>
+
+  <div class="prints-temp">
+    <img src="prints-temp.jpg" alt="Prints en construcción">
+
     <p>
-      Ediciones, obra gráfica y formatos reproducibles.
+      Esta sección está actualmente en construcción.<br>
+      Próximamente ediciones y obra gráfica.
     </p>
-  </section>
+  </div>
+</section>
+
 
   <!-- BIO -->
  <section id="bio" class="section">
