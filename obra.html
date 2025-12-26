@@ -6,9 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
-    * {
-      box-sizing: border-box;
-    }
+    /* =====================================================
+       BASE
+       ===================================================== */
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
@@ -17,7 +18,9 @@
       color: #111;
     }
 
-    /* ───────── HEADER ───────── */
+    /* =====================================================
+       HEADER (igual que index)
+       ===================================================== */
     .topbar {
       position: fixed;
       top: 0;
@@ -34,7 +37,7 @@
     }
 
     .brand img {
-      height: 28px;
+      height: 36px;
     }
 
     .menu {
@@ -49,25 +52,50 @@
       opacity: 0.8;
     }
 
-    .menu a:hover {
-      opacity: 1;
-    }
+    .menu a:hover { opacity: 1; }
 
-    /* ───────── PAGE ───────── */
+    /* =====================================================
+       PAGE
+       ===================================================== */
     .page {
-      padding: 120px 4vw 80px;
-      max-width: 1400px;
+      padding: 120px 10vw 100px;
+      max-width: 1200px;
       margin: auto;
     }
 
-    .page h1 {
+    h1 {
       font-size: 2rem;
       font-weight: 400;
-      margin-bottom: 3rem;
       letter-spacing: 0.05em;
+      margin-bottom: 3rem;
     }
 
-    /* ───────── GALLERY ───────── */
+    /* =====================================================
+       ARTIST INTRO
+       ===================================================== */
+    .artist {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 5rem;
+      align-items: center;
+    }
+
+    .artist img {
+      width: 100%;
+      height: auto;
+      display: block;
+      background: #ddd;
+    }
+
+    .artist p {
+      line-height: 1.6;
+      opacity: 0.85;
+    }
+
+    /* =====================================================
+       GALLERY
+       ===================================================== */
     .gallery {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
@@ -81,14 +109,14 @@
       background: #ddd;
     }
 
-    /* ───────── RESPONSIVE ───────── */
+    /* =====================================================
+       RESPONSIVE
+       ===================================================== */
     @media (max-width: 768px) {
-      .menu {
-        display: none;
-      }
+      .menu { display: none; }
 
-      .page {
-        padding-top: 100px;
+      .artist {
+        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -96,6 +124,7 @@
 
 <body>
 
+  <!-- HEADER -->
   <header class="topbar">
     <div class="brand">
       <a href="index.html">
@@ -106,23 +135,38 @@
     <nav class="menu">
       <a href="index.html">Inicio</a>
       <a href="obra.html">Obra</a>
-
       <a href="#">Prints</a>
-      <a href="#">Tienda</a>
-      <a href="#">News</a>
       <a href="#">Bio</a>
     </nav>
   </header>
 
+  <!-- CONTENT -->
   <main class="page">
+
     <h1>Obra</h1>
 
+    <!-- ARTIST INTRO -->
+    <section class="artist">
+      <img src="artista.jpg" alt="Artista Van©">
+
+      <p>
+        Van© es un proyecto artístico contemporáneo que explora
+        el diálogo entre cuerpo, memoria, espacio y tecnología.
+        <br><br>
+        La obra se desarrolla a través de procesos visuales y
+        audiovisuales, donde la identidad y el territorio
+        funcionan como materia viva.
+      </p>
+    </section>
+
+    <!-- GALLERY -->
     <section class="gallery">
       <img src="obra1.jpg" alt="Obra Van©">
       <img src="obra2.jpg" alt="Obra Van©">
       <img src="obra3.jpg" alt="Obra Van©">
       <img src="obra4.jpg" alt="Obra Van©">
     </section>
+
   </main>
 
 </body>
