@@ -38,6 +38,16 @@
       background: rgba(255,255,255,0.75);
       backdrop-filter: blur(8px);
     }
+/* IMAGEN DE FONDO DEL HERO */
+.background {
+  position: absolute;
+  inset: 0;
+  background-image: url('fondo.jpg');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.25; /* controla la presencia del fondo */
+  z-index: 0;
+}
 
     .brand img { height: 46px; }
 
@@ -246,6 +256,7 @@
 
   <!-- HERO -->
   <section class="scene" id="inicio">
+    <div class="background"></div>
     <div class="light"></div>
     <img src="obra.jpg" alt="Van© obra" class="artwork">
   </section>
