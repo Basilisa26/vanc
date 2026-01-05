@@ -73,6 +73,79 @@
     @media (max-width: 768px) {
       .menu { display: none; }
     }
+    /* PRINTS GRID */
+.prints-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 3rem;
+  justify-items: center;
+}
+
+/* PRINT ITEM */
+.print-item {
+  text-decoration: none;
+  color: inherit;
+  width: 100%;
+  max-width: 320px;
+}
+
+/* IMAGE CONTAINER */
+.print-image {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+/* IMAGE LAYERS */
+.print-image .img {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transition: opacity 0.5s ease;
+}
+
+/* MAIN IMAGE */
+.img-main {
+  opacity: 1;
+}
+
+/* HOVER IMAGE */
+.img-hover {
+  opacity: 0;
+}
+
+/* HOVER EFFECT */
+.print-item:hover .img-main {
+  opacity: 0;
+}
+
+.print-item:hover .img-hover {
+  opacity: 1;
+}
+
+/* PROTECTIVE LAYER */
+.shield {
+  position: absolute;
+  inset: 0;
+  background: transparent;
+  z-index: 3;
+}
+
+/* TEXT */
+.print-item h2 {
+  font-size: 1rem;
+  font-weight: 400;
+  margin: 0.2rem 0;
+}
+
+.price {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
   </style>
 </head>
 
