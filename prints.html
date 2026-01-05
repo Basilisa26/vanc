@@ -13,6 +13,7 @@
       font-family: Arial, Helvetica, sans-serif;
       background: #f5f5f5;
       color: #111;
+      user-select: none; /* bloquea selección */
     }
 
     /* HEADER */
@@ -88,6 +89,7 @@
       background-size: cover;
       background-position: center;
       transition: opacity 0.5s ease;
+      pointer-events: none; /* evita interacción directa */
     }
 
     .img-main { opacity: 1; }
@@ -112,6 +114,12 @@
     .price {
       font-size: 0.9rem;
       opacity: 0.8;
+    }
+
+    /* Bloquea arrastre */
+    img, .print-image {
+      -webkit-user-drag: none;
+      user-drag: none;
     }
   </style>
 </head>
@@ -161,6 +169,13 @@
     </section>
 
   </main>
+
+  <!-- Bloquea clic derecho -->
+  <script>
+    document.addEventListener('contextmenu', function (e) {
+      e.preventDefault();
+    });
+  </script>
 
 </body>
 </html>
