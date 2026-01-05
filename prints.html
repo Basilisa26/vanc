@@ -47,6 +47,10 @@
 
     .menu a:hover { opacity: 1; }
 
+    @media (max-width: 768px) {
+      .menu { display: none; }
+    }
+
     /* CONTENT */
     .page {
       padding: 140px 10vw 100px;
@@ -55,97 +59,60 @@
       text-align: center;
     }
 
-    .page img {
-      width: 100%;
-      max-width: 500px;
-      margin: 0 auto 2rem;
-      display: block;
-      background: #ddd;
-    }
-
-    .page p {
-      max-width: 500px;
-      margin: auto;
-      line-height: 1.6;
-      opacity: 0.85;
-    }
-
-    @media (max-width: 768px) {
-      .menu { display: none; }
-    }
     /* PRINTS GRID */
-.prints-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 3rem;
-  justify-items: center;
-}
+    .prints-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 3rem;
+      justify-items: center;
+    }
 
-/* PRINT ITEM */
-.print-item {
-  text-decoration: none;
-  color: inherit;
-  width: 100%;
-  max-width: 320px;
-}
+    .print-item {
+      text-decoration: none;
+      color: inherit;
+      width: 100%;
+      max-width: 320px;
+    }
 
-/* IMAGE CONTAINER */
-.print-image {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 3 / 4;
-  overflow: hidden;
-  margin-bottom: 1rem;
-}
+    .print-image {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      overflow: hidden;
+      margin-bottom: 1rem;
+    }
 
-/* IMAGE LAYERS */
-.print-image .img {
-  position: absolute;
-  inset: 0;
-  background-size: cover;
-  background-position: center;
-  transition: opacity 0.5s ease;
-}
+    .print-image .img {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      transition: opacity 0.5s ease;
+    }
 
-/* MAIN IMAGE */
-.img-main {
-  opacity: 1;
-}
+    .img-main { opacity: 1; }
+    .img-hover { opacity: 0; }
 
-/* HOVER IMAGE */
-.img-hover {
-  opacity: 0;
-}
+    .print-item:hover .img-main { opacity: 0; }
+    .print-item:hover .img-hover { opacity: 1; }
 
-/* HOVER EFFECT */
-.print-item:hover .img-main {
-  opacity: 0;
-}
+    .shield {
+      position: absolute;
+      inset: 0;
+      background: transparent;
+      z-index: 3;
+    }
 
-.print-item:hover .img-hover {
-  opacity: 1;
-}
+    .print-item h2 {
+      font-size: 1rem;
+      font-weight: 400;
+      margin: 0.2rem 0;
+    }
 
-/* PROTECTIVE LAYER */
-.shield {
-  position: absolute;
-  inset: 0;
-  background: transparent;
-  z-index: 3;
-}
-
-/* TEXT */
-.print-item h2 {
-  font-size: 1rem;
-  font-weight: 400;
-  margin: 0.2rem 0;
-}
-
-.price {
-  font-size: 0.9rem;
-  opacity: 0.8;
-}
-
+    .price {
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
   </style>
 </head>
 
@@ -169,32 +136,30 @@
 
   <!-- CONTENT -->
   <main class="page">
+
+    <h1>Prints</h1>
+
     <section class="prints-grid">
 
-  <a href="print-01.html" class="print-item">
+      <a href="print-01.html" class="print-item">
 
-    <div class="print-image">
-      <div class="img img-main"
-           style="background-image: url('print1-a.jpg');"></div>
+        <div class="print-image">
+          <div class="img img-main"
+               style="background-image: url('print1-a.jpg');"></div>
 
-      <div class="img img-hover"
-           style="background-image: url('print1-b.jpg');"></div>
+          <div class="img img-hover"
+               style="background-image: url('print1-b.jpg');"></div>
 
-      <div class="shield"></div>
-    </div>
+          <div class="shield"></div>
+        </div>
 
-    <h2>Obra I</h2>
-    <p class="price">120 €</p>
+        <h2>Obra I</h2>
+        <p class="price">120 €</p>
 
-  </a>
+      </a>
 
-</section>
+    </section>
 
-
-    <p>
-      Estamos preparando esta sección.<br>
-      Próximamente prints y ediciones disponibles.
-    </p>
   </main>
 
 </body>
