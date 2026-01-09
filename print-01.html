@@ -57,19 +57,17 @@
     }
 
     /* PAGE */
-   .page {
-  position: absolute;
-  top: 70px;                 /* altura exacta del header */
-  left: 0;
-  right: 0;
-  bottom: 0;
-
-  overflow-y: auto;          /* ⬅️ aquí vive el scroll */
-  padding: 20px 6vw 30px;
-
-  max-width: 900px;
-  margin: 0 auto;
+ .artwork {
+  width: 100%;
+  max-height: 55vh;        /* ⬅️ CLAVE */
+  aspect-ratio: 3 / 4;
+  background-image: url('images/prints/print1-a.jpg');
+  background-size: contain; /* ⬅️ evita recorte */
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-bottom: 0.8rem;
 }
+
 
 
     /* ARTWORK */
@@ -99,13 +97,11 @@
     }
 
     /* CONDITIONS */
-    .conditions {
-      margin-top: 2rem;
-      font-size: 0.85rem;
-      line-height: 1.6;
-      opacity: 0.8;
-      max-width: 520px;
-    }
+   .conditions {
+  margin-top: 1.2rem;
+  font-size: 0.8rem;
+}
+
   </style>
 
   <!-- PAYPAL SDK -->
