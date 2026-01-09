@@ -17,7 +17,7 @@
       font-family: Arial, Helvetica, sans-serif;
       background: #f5f5f5;
       color: #111;
-      overflow-x: hidden;
+      overflow: hidden;
     }
 
     /* HEADER */
@@ -57,12 +57,20 @@
     }
 
     /* PAGE */
-    .page {
-  padding: 80px 6vw 40px;
+   .page {
+  position: absolute;
+  top: 70px;                 /* altura exacta del header */
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  overflow-y: auto;          /* ⬅️ aquí vive el scroll */
+  padding: 20px 6vw 30px;
+
   max-width: 900px;
-  margin: auto;
-  min-height: calc(100vh - 70px);
+  margin: 0 auto;
 }
+
 
     /* ARTWORK */
     .artwork {
