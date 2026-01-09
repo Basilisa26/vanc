@@ -204,6 +204,29 @@
   opacity: 1;
 }
 
+
+      /* PRINTS TEMP (INDEX) */
+.prints-temp {
+  max-width: 800px;
+  margin: 2rem auto;
+  text-align: center;
+}
+
+.prints-temp img {
+  width: 100%;
+  height: auto;
+  max-height: 60vh;          /* ⬅️ clave para desktop */
+  object-fit: contain;
+  display: block;
+  margin: 0 auto 1.2rem;
+}
+
+.prints-temp p {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  line-height: 1.6;
+}
+
       /* =====================================================
    BIO – IMAGEN + TEXTO
    ===================================================== */
@@ -243,6 +266,7 @@
 @media (max-width: 768px) {
   .prints-temp {
     grid-template-columns: 1fr;
+     max-height: none;
   }
 }
 
