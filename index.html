@@ -79,9 +79,6 @@ body {
   width: 100%;
   min-height: calc(100vh - 70px);
   margin-top: 70px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   overflow: hidden;
 }
 
@@ -98,40 +95,6 @@ body {
   position: absolute;
   inset: 0;
   z-index: 1;
-}
-
-/* ===============================
-   BANNER TIENDA
-=============================== */
-.shop-banner {
-  height: 120px;
-}
-
-.shop-cta {
-  width: 100%;
-  height: 100%;
-  display: block;
-  position: relative;
-}
-
-.shop-cta img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.shop-cta span {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 600;
-  letter-spacing: 0.2em;
-  color: #ff2fa4;
-  background: rgba(255,255,255,0.65);
-  backdrop-filter: blur(2px);
 }
 
 /* ===============================
@@ -157,6 +120,44 @@ body {
   max-width: 600px;
   line-height: 1.6;
   opacity: 0.85;
+}
+
+/* ===============================
+   BANNER TIENDA (EN OBRA)
+=============================== */
+.shop-banner {
+  max-width: 1000px;
+  height: 220px;
+  margin: 0 auto 4rem;
+  position: relative;
+}
+
+.shop-cta {
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: relative;
+  overflow: hidden;
+}
+
+.shop-cta img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.shop-cta span {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  color: #ff2fa4;
+  background: rgba(255,255,255,0.6);
+  backdrop-filter: blur(2px);
 }
 
 /* ===============================
@@ -228,6 +229,11 @@ body {
   .bio-block {
     grid-template-columns: 1fr;
   }
+
+  .shop-banner {
+    height: 180px;
+    margin-bottom: 3rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -268,26 +274,36 @@ body {
   </nav>
 </header>
 
+<!-- HERO -->
 <section id="inicio" class="scene">
   <div class="background"></div>
   <a href="https://youtu.be/_S-utsm3cQk" target="_blank" class="hero-link" aria-label="Ver video"></a>
 </section>
 
-<div class="shop-banner">
-  <a href="prints.html" class="shop-cta">
-    <img src="shop-strip.gif" alt="Ir a la tienda">
-    <span>TIENDA</span>
-  </a>
-</div>
-
+<!-- OBRA -->
 <section id="obra" class="section">
+
+  <!-- BANNER -->
+  <div class="shop-banner">
+    <a href="prints.html" class="shop-cta">
+      <img src="shop-strip.gif" alt="Ir a la tienda">
+      <span>TIENDA</span>
+    </a>
+  </div>
+
   <h2>Obra</h2>
+
   <div class="obra-intro">
     <img src="artista.jpg" alt="Artista Van©">
-    <p>Van© es un proyecto artístico contemporáneo...</p>
+    <p>
+      Van© es un proyecto artístico contemporáneo que explora
+      el diálogo entre cuerpo, memoria, espacio y tecnología.
+    </p>
   </div>
+
 </section>
 
+<!-- PRINTS -->
 <section id="prints" class="section">
   <h2>Prints</h2>
   <div class="prints-temp">
@@ -297,11 +313,15 @@ body {
   </div>
 </section>
 
+<!-- BIO -->
 <section id="bio" class="section">
   <h2>Bio</h2>
   <div class="bio-block">
     <img src="bio1.jpg" alt="Van© bio">
-    <p>Identidad, proceso y territorio forman el núcleo del proyecto.</p>
+    <p>
+      La identidad, el proceso y el territorio forman parte
+      del lenguaje visual y conceptual del proyecto.
+    </p>
   </div>
 </section>
 
