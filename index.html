@@ -86,12 +86,7 @@
     }
 
     .background {
-      <a href="https://youtu.be/_S-utsm3cQk"
-   target="_blank"
-   class="hero-link"
-   aria-label="Ver video en YouTube"></a>
-
-      position: absolute;
+        position: absolute;
       inset: 0;
       background-image: url('fondo.jpg');
       background-size: cover;
@@ -100,6 +95,7 @@
     }
 /* ZONA CLICABLE CENTRAL DEL HERO */
 .hero-link {
+  display: block;
   background: rgba(255,255,255,0.04);
   position: absolute;
   width: 40%;
@@ -350,6 +346,15 @@
   </div>
 </section>
 
+<section class="scene" id="inicio">
+  <div class="background"></div>
+
+  <a href="https://youtu.be/_S-utsm3cQk"
+     target="_blank"
+     class="hero-link"
+     aria-label="Ver video en YouTube">
+  </a>
+</section>
 
   <!-- BIO -->
   <section id="bio" class="section">
