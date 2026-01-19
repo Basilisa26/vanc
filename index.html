@@ -146,7 +146,7 @@ body {
   object-fit: cover;
   display: block;
 }
-
+/* 
 .shop-cta span {
   position: absolute;
   inset: 0;
@@ -156,7 +156,22 @@ body {
   font-weight: 600;
   letter-spacing: 0.25em;
   color: #ff2fa4;
-  background: none;        /* CLAVE */
+  background: none;         CLAVE */
+
+.shop-cta span {
+  position: absolute;
+  left: 50%;
+  bottom: 6px;               /* casi al borde inferior */
+  transform: translateX(-50%);
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  color: #ff2fa4;
+  background: none;
+  pointer-events: none;
+}
+
+   
+   
 }
 
 /* SOLO detrás del texto
