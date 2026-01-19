@@ -153,12 +153,18 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  pointer-events: none;
+}
+
+.shop-cta span::before {
+  content: "TIENDA";
+  padding: 0.9rem 1.6rem;
   font-weight: 600;
   letter-spacing: 0.25em;
   color: #ff2fa4;
-  background: rgba(255,255,255,0.85);
- 
+  background: rgba(255,255,255,0.92); /* SOLO detrás del texto */
 }
+
 
 /* ===============================
    OBRA
