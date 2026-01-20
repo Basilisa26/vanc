@@ -320,16 +320,30 @@ body {
 .vancolage-section {
   position: relative;
   width: 100%;
-  .vancolage-section {
-    height: 38vh;
-    min-height: 220px;     /* móvil estable */
+  height: 60vh;
+  min-height: 320px;
 
   background-image: url('vancolage.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
- }
+}
 
+/* Tablet */
+@media (max-width: 768px) {
+  .vancolage-section {
+    height: 45vh;
+    min-height: 260px;
+  }
+}
+
+/* Móvil */
+@media (max-width: 480px) {
+  .vancolage-section {
+    height: 38vh;
+    min-height: 220px;
+  }
+}
 
 </style>
 </head>
