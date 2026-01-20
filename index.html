@@ -106,7 +106,7 @@ body {
 }
 #obra.section {
   padding-top: 80px;
-  padding-bottom: 60px;
+  padding-bottom: 50px;
 }
 
 .section:nth-of-type(even) {
@@ -248,20 +248,34 @@ body {
 =============================== */
 @media (max-width: 768px) {
 
+  /* SECCIONES – AJUSTE VERTICAL CLAVE */
+  .section {
+    min-height: auto;
+    padding: 90px 6vw 70px;
+  }
+
+  #obra.section {
+    padding-top: 60px;
+    padding-bottom: 40px;
+  }
+
+  /* MENÚ */
   .menu {
     flex-wrap: wrap;
     justify-content: center;
     gap: 1rem;
   }
 
+  /* GRIDS */
   .obra-intro,
   .bio-block {
     grid-template-columns: 1fr;
   }
 
+  /* BANNER */
   .shop-banner {
     height: 180px;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
   }
 }
 
@@ -279,6 +293,16 @@ body {
   .scene {
     margin-top: 110px;
     min-height: calc(100vh - 110px);
+  }
+
+  /* OBRA aún más compacto en móvil pequeño */
+  #obra.section {
+    padding-top: 48px;
+    padding-bottom: 36px;
+  }
+
+  .shop-banner {
+    height: 160px;
   }
 }
 
