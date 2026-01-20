@@ -170,14 +170,22 @@ body {
 }
 
 /* ===============================
-   VANCOLAGE (FONDO FULL WIDTH)
+   VANCOLAGE – HERO VISUAL
 =============================== */
 .vancolage-section {
+  position: relative;
   width: 100%;
-  height: 60vh;
-  min-height: 320px;
-  background: url('vancolage.png') center / cover no-repeat;
+  height: 100vh;
+  min-height: 100vh;
+
+  background-image: url('vancolage.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  overflow: hidden;
 }
+
 
 /* ===============================
    PRINTS
@@ -230,9 +238,9 @@ body {
     height: 180px;
   }
 
-  .vancolage-section {
-    height: 45vh;
-    min-height: 260px;
+   .vancolage-section {
+    height: 70vh;
+    min-height: 70vh;
   }
 }
 
