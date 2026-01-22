@@ -225,6 +225,7 @@ body {
 =============================== */
 @media (max-width: 768px) {
 
+  /* SECCIONES GENERALES */
   .section {
     min-height: auto;
     padding: 90px 6vw 70px;
@@ -235,33 +236,62 @@ body {
     padding-bottom: 40px;
   }
 
+  /* MENÚ */
   .menu {
     flex-wrap: wrap;
     justify-content: center;
   }
 
+  /* OBRA / BIO */
   .obra-intro {
     grid-template-columns: 1fr;
   }
 
+  /* BANNER */
   .shop-banner {
     height: 180px;
   }
 
-   .vancolage-section {
+  /* HERO */
+  .scene {
+    min-height: 60vh;
+  }
+
+  /* VANCOLAGE */
+  .vancolage-section {
     height: 70vh;
     min-height: 70vh;
   }
-   .scene {
-    min-height: 60vh;
+
+  /* ===============================
+     BIO – AJUSTE DEFINITIVO
+  =============================== */
+  #bio.section {
+    padding-top: 40px;
+    padding-bottom: 60px;
   }
+
+  #bio h2 {
+    margin-top: 0;
+  }
+
+  #bio .obra-intro {
+    display: block;
+    text-align: center;
+  }
+
   #bio .obra-intro img {
-    margin: 0 auto;
+    margin: 0 auto 1.5rem;
+    max-width: 320px;
   }
-   #bio.section {
-  min-height: auto;
- }
+
+  #bio .obra-intro p {
+    margin: 0 auto;
+    max-width: 90%;
+    text-align: center;
+  }
 }
+
 /* ===============================
    BIO – CORRECCIÓN DEFINITIVA MÓVIL
 =============================== */
@@ -282,7 +312,13 @@ body {
     margin: 0 auto;
     max-width: 90%;
     text-align: center;
-  }
+  }/* ===============================
+   BIO – CORRECCIÓN DE ESPACIADO
+=============================== */
+#bio.section {
+  padding-top: 80px;     /* antes 140px */
+  padding-bottom: 80px;  /* simetría */
+ }
 }
 
 
@@ -297,7 +333,7 @@ body {
     height: 64px;
   }
 
-   .scene {
+  .scene {
     min-height: 55vh;
   }
 
@@ -309,8 +345,8 @@ body {
     height: 38vh;
     min-height: 220px;
   }
-   
 }
+
 
 </style>
 </head>
