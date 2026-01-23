@@ -26,10 +26,10 @@
 
     .obra-bg {
       position: absolute;
-      top: -30vh;
+      top: -10vh;
       left: 0;
       width: 100%;
-      height: 160vh;
+      height: 180vh;
       background-image: url('fondo-obra.png');
       background-size: cover;
       background-position: center;
@@ -118,8 +118,12 @@
       .menu { display: none; }
 
       .obra-bg-wrapper {
-        position: absolute;
-      }
+    display: none;   /* 🔴 fondo eliminado */
+  }
+
+  body {
+    background: #000;
+  }
 
       .obra-bg {
         top: 0;
