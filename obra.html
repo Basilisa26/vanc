@@ -7,20 +7,34 @@
 
   <style>
     /* =====================================================
-       BASE
-       ===================================================== */
+       RESET / BASE
+    ===================================================== */
     * { box-sizing: border-box; }
 
     body {
       margin: 0;
+      background: #000;
+      color: #f5f5f5;
       font-family: Arial, Helvetica, sans-serif;
-      background: #f5f5f5;
-      color: #111;
+      overflow-x: hidden;
     }
 
     /* =====================================================
-       HEADER (igual que index)
-       ===================================================== */
+       FONDO FIJO
+    ===================================================== */
+    .obra-bg {
+      position: fixed;
+      inset: 0;
+      background-image: url('fondo-obra.jpg'); /* cambia aquí */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      z-index: 0;
+    }
+
+    /* =====================================================
+       HEADER
+    ===================================================== */
     .topbar {
       position: fixed;
       top: 0;
@@ -31,13 +45,14 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      background: rgba(255,255,255,0.85);
+      background: rgba(255,255,255,0.9);
       backdrop-filter: blur(8px);
       z-index: 10;
     }
 
     .brand img {
       height: 46px;
+      display: block;
     }
 
     .menu {
@@ -55,74 +70,102 @@
     .menu a:hover { opacity: 1; }
 
     /* =====================================================
-       PAGE
-       ===================================================== */
+       CONTENIDO QUE DESLIZA
+    ===================================================== */
     .page {
-      padding: 120px 10vw 100px;
+      position: relative;
+      z-index: 1;
+      padding: 120px 10vw 120px;
       max-width: 1200px;
-      margin: auto;
+      margin: 0 auto;
     }
 
-    h1 {
+    /* =====================================================
+       TÍTULO
+    ===================================================== */
+    .obra-title {
       font-size: 2rem;
       font-weight: 400;
-      letter-spacing: 0.05em;
-      margin-bottom: 3rem;
+      letter-spacing: 0.12em;
+      color: #ff2fa4;
+      margin-bottom: 6rem;
     }
 
     /* =====================================================
        ARTIST INTRO
-       ===================================================== */
+    ===================================================== */
     .artist {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: auto 1fr;
       gap: 3rem;
-      margin-bottom: 5rem;
       align-items: center;
+      max-width: 1000px;
+      margin: 0 auto 18vh;
     }
 
     .artist img {
+      max-width: 360px;
       width: 100%;
       height: auto;
       display: block;
-      background: #ddd;
     }
 
     .artist p {
-      line-height: 1.6;
-      opacity: 0.85;
+      max-width: 560px;
+      line-height: 1.7;
+      color: rgba(245,245,245,0.8);
     }
 
     /* =====================================================
-       GALLERY
-       ===================================================== */
+       GALERÍA
+    ===================================================== */
     .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-      gap: 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
     }
 
     .gallery img {
       width: 100%;
       height: auto;
       display: block;
-      background: #ddd;
+      margin-bottom: 18vh;
     }
 
     /* =====================================================
        RESPONSIVE
-       ===================================================== */
+    ===================================================== */
     @media (max-width: 768px) {
+
       .menu { display: none; }
+
+      .obra-bg {
+        position: absolute; /* evita bugs en móvil */
+      }
+
+      .page {
+        padding: 100px 6vw 100px;
+      }
 
       .artist {
         grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .artist img {
+        margin: 0 auto 1.5rem;
+      }
+
+      .gallery img {
+        margin-bottom: 12vh;
       }
     }
   </style>
 </head>
 
 <body>
+
+  <!-- FONDO -->
+  <div class="obra-bg"></div>
 
   <!-- HEADER -->
   <header class="topbar">
@@ -135,20 +178,19 @@
     <nav class="menu">
       <a href="index.html">Inicio</a>
       <a href="obra.html">Obra</a>
-      <a href="#">Prints</a>
-      <a href="#">Bio</a>
+      <a href="prints.html">Prints</a>
+      <a href="index.html#bio">Bio</a>
     </nav>
   </header>
 
-  <!-- CONTENT -->
+  <!-- CONTENIDO -->
   <main class="page">
 
-    <h1>Obra</h1>
+    <h1 class="obra-title">Obra</h1>
 
     <!-- ARTIST INTRO -->
     <section class="artist">
       <img src="artista.jpg" alt="Artista Van©">
-
       <p>
         Van© es un proyecto artístico contemporáneo que explora
         el diálogo entre cuerpo, memoria, espacio y tecnología.
