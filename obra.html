@@ -30,6 +30,7 @@
       background-position: center;
       background-repeat: no-repeat;
       z-index: 0;
+      will-change: transform;
     }
 
     /* =====================================================
@@ -172,6 +173,19 @@
   </style>
 </head>
 
+<script>
+  (function () {
+    const bg = document.querySelector('.obra-bg');
+    if (!bg) return;
+
+    window.addEventListener('scroll', () => {
+      const scrollY = window.scrollY;
+      bg.style.transform = `translateY(${scrollY * 0.15}px)`;
+    });
+  })();
+</script>
+
+  
 <body>
 
   <!-- FONDO -->
@@ -213,7 +227,7 @@
 
     <!-- GALLERY -->
     <section class="gallery">
-      <img src="obra1.jpg" alt="Obra Van©">
+      <img src="obra1.png" alt="Obra Van©">
       <img src="obra2.jpg" alt="Obra Van©">
       <img src="obra3.jpg" alt="Obra Van©">
       <img src="obra4.jpg" alt="Obra Van©">
