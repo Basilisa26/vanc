@@ -119,17 +119,23 @@
     /* =====================================================
        GALERÍA
     ===================================================== */
-    .gallery {
-      max-width: 1000px;
-      margin: 0 auto;
-    }
+   /* =====================================================
+   GALERÍA – DOS EN DOS
+===================================================== */
+.gallery {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 6vw 4vw; /* vertical / horizontal */
+}
 
-    .gallery img {
-      width: 100%;
-      height: auto;
-      display: block;
-      margin-bottom: 18vh;
-    }
+.gallery img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 
     /* =====================================================
        RESPONSIVE
@@ -158,6 +164,10 @@
       .gallery img {
         margin-bottom: 12vh;
       }
+       .gallery {
+    grid-template-columns: 1fr;
+    gap: 10vh;
+  }
     }
   </style>
 </head>
