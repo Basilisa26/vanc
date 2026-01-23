@@ -6,9 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
-    /* =====================================================
-       RESET / BASE
-    ===================================================== */
     * { box-sizing: border-box; }
 
     body {
@@ -19,33 +16,28 @@
       overflow-x: hidden;
     }
 
-    /* =====================================================
-    /* CONTENEDOR DEL FONDO */
-.obra-bg-wrapper {
-  position: fixed;
-  inset: 0;
-  overflow: hidden;
-  z-index: 0;
-}
+    /* ===== FONDO PARALLAX ===== */
+    .obra-bg-wrapper {
+      position: fixed;
+      inset: 0;
+      overflow: hidden;
+      z-index: 0;
+    }
 
-/* FONDO QUE SE MUEVE */
-.obra-bg {
-  position: absolute;
-  top: -30vh;
-  left: 0;
-  width: 100%;
-  height: 160vh; /* imagen “sobrante” */
-  background-image: url('fondo-obra.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  will-change: transform;
-}
+    .obra-bg {
+      position: absolute;
+      top: -30vh;
+      left: 0;
+      width: 100%;
+      height: 160vh;
+      background-image: url('fondo-obra.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      will-change: transform;
+    }
 
-
-    /* =====================================================
-       HEADER
-    ===================================================== */
+    /* ===== HEADER ===== */
     .topbar {
       position: fixed;
       top: 0;
@@ -61,10 +53,7 @@
       z-index: 10;
     }
 
-    .brand img {
-      height: 46px;
-      display: block;
-    }
+    .brand img { height: 46px; }
 
     .menu {
       display: flex;
@@ -72,17 +61,12 @@
     }
 
     .menu a {
-      font-size: 0.9rem;
       text-decoration: none;
       color: #111;
       opacity: 0.8;
     }
 
-    .menu a:hover { opacity: 1; }
-
-    /* =====================================================
-       CONTENIDO QUE DESLIZA
-    ===================================================== */
+    /* ===== CONTENIDO ===== */
     .page {
       position: relative;
       z-index: 1;
@@ -91,9 +75,6 @@
       margin: 0 auto;
     }
 
-    /* =====================================================
-       TÍTULO
-    ===================================================== */
     .obra-title {
       font-size: 2rem;
       font-weight: 400;
@@ -102,112 +83,49 @@
       margin-bottom: 6rem;
     }
 
-    /* =====================================================
-       ARTIST INTRO
-    ===================================================== */
-    .artist {
+    /* ===== GALERÍA ===== */
+    .gallery {
+      max-width: 1100px;
+      margin: 0 auto;
       display: grid;
-      grid-template-columns: auto 1fr;
-      gap: 3rem;
-      align-items: center;
-      max-width: 1000px;
-      margin: 0 auto 18vh;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 6vw 4vw;
     }
 
-    .artist img {
-      max-width: 360px;
+    .gallery img {
       width: 100%;
-      height: auto;
       display: block;
     }
 
-    .artist p {
-      max-width: 560px;
-      line-height: 1.7;
-      color: rgba(245,245,245,0.8);
-    }
-
-    /* =====================================================
-       GALERÍA
-    ===================================================== */
-   /* =====================================================
-   GALERÍA – DOS EN DOS
-===================================================== */
-.gallery {
-  max-width: 1100px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 6vw 4vw; /* vertical / horizontal */
-}
-
-.gallery img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-
-    /* =====================================================
-       RESPONSIVE
-    ===================================================== */
+    /* ===== RESPONSIVE ===== */
     @media (max-width: 768px) {
 
       .menu { display: none; }
 
-.obra-bg-wrapper {
-    position: absolute;
-  }
-
-  .obra-bg {
-    top: 0;
-    height: 100vh;
-    transform: none !important;
-  }
-
-      .page {
-        padding: 100px 6vw 100px;
+      .obra-bg-wrapper {
+        position: absolute;
       }
 
-      .artist {
+      .obra-bg {
+        top: 0;
+        height: 100vh;
+        transform: none !important;
+      }
+
+      .gallery {
         grid-template-columns: 1fr;
-        text-align: center;
+        gap: 10vh;
       }
-
-      .artist img {
-        margin: 0 auto 1.5rem;
-      }
-
-      .gallery img {
-        margin-bottom: 12vh;
-      }
-       .gallery {
-    grid-template-columns: 1fr;
-    gap: 10vh;
-  }
     }
   </style>
 </head>
 
-<script>
-  (function () {
-    const bg = document.querySelector('.obra-bg');
-    if (!bg) return;
-
-     if (window.innerWidth < 768) return; // NO parallax en móvil
-
-    window.addEventListener('scroll', () => {
-      const scrollY = window.scrollY;
-      bg.style.transform = `translateY(${scrollY * 0.15}px, 0)`;
-    });
-  })();
-</script>
-
-  
 <body>
 
   <!-- FONDO -->
-  <div class="obra-bg"></div>
+  <div class="obra-bg-wrapper">
+    <div class="obra-bg"></div>
+  </div>
 
   <!-- HEADER -->
   <header class="topbar">
@@ -216,7 +134,6 @@
         <img src="vanc-logo.png" alt="Van©">
       </a>
     </div>
-
     <nav class="menu">
       <a href="index.html">Inicio</a>
       <a href="obra.html">Obra</a>
@@ -227,35 +144,29 @@
 
   <!-- CONTENIDO -->
   <main class="page">
-
     <h1 class="obra-title">Obra</h1>
 
-    <!-- ARTIST INTRO 
-    <section class="artist">
-      <img src="artista.jpg" alt="Artista Van©">
-      <p>
-        Van© es un proyecto artístico contemporáneo que explora
-        el diálogo entre cuerpo, memoria, espacio y tecnología.
-        <br><br>
-        La obra se desarrolla a través de procesos visuales y
-        audiovisuales, donde la identidad y el territorio
-        funcionan como materia viva.
-      </p>
-    </section>  -->
-
-    <!-- GALLERY -->
     <section class="gallery">
-      <img src="obra1.png" alt="Obra Van©">
-      <img src="obra2.jpg" alt="Obra Van©">
-      <img src="obra3.jpg" alt="Obra Van©">
-      <img src="obra4.jpg" alt="Obra Van©">
+      <img src="obra1.png" alt="">
+      <img src="obra2.jpg" alt="">
+      <img src="obra3.jpg" alt="">
+      <img src="obra4.jpg" alt="">
     </section>
-
   </main>
 
-</body>
-  <div class="obra-bg-wrapper">
-  <div class="obra-bg"></div>
-</div>
+  <!-- PARALLAX SCRIPT -->
+  <script>
+    (function () {
+      const bg = document.querySelector('.obra-bg');
+      if (!bg) return;
+      if (window.innerWidth < 768) return;
 
+      window.addEventListener('scroll', () => {
+        const y = window.scrollY;
+        bg.style.transform = `translate3d(0, ${y * 0.15}px, 0)`;
+      });
+    })();
+  </script>
+
+</body>
 </html>
