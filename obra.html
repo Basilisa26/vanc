@@ -89,6 +89,7 @@
       margin: 0 auto;
       display: grid;
       grid-template-columns: repeat(2, 1fr);
+      grid-auto-flow: dense;
       gap: 6vw 4vw;
     }
 
@@ -96,6 +97,10 @@
       width: 100%;
       display: block;
     }
+    /* Horizontales */
+.gallery img.wide {
+  grid-column: span 2;
+}
 
     /* ===== RESPONSIVE ===== */
     @media (max-width: 768px) {
@@ -111,12 +116,15 @@
         height: 100vh;
         transform: none !important;
       }
-
+     
       .gallery {
-        grid-template-columns: 1fr;
-        gap: 10vh;
-      }
+    grid-template-columns: 1fr;
+  }
+
+  .gallery img.wide {
+    grid-column: span 1;
     }
+  }
   </style>
 </head>
 
@@ -149,10 +157,10 @@
     <section class="gallery">
       <img src="obra1.png" alt="">
       <img src="obra3.jpg" alt="">
-      <img src="PisciVan.png" alt="">
+        <img src="PisciVan.png" class="wide" alt="">
       <img src="Print1.jpeg" alt="">
       <img src="Print2.jpeg" alt="">
-      <img src="Print3.jpeg" alt="">
+     <img src="Print3.jpeg" class="wide" alt="">
     </section>
   </main>
 
@@ -165,7 +173,7 @@
 
       window.addEventListener('scroll', () => {
         const y = window.scrollY;
-        bg.style.transform = `translate3d(0, ${y * 0.15}px, 0)`;
+        bg.style.transform = `translate3d(0, ${-y * 0.15}px, 0)`;
       });
     })();
   </script>
